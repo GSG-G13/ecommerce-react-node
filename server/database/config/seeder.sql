@@ -1,4 +1,5 @@
-BEGIN -- INERT DUMMY DATA
+BEGIN;
+
 INSERT INTO
   USERS (name, email, password)
 VALUES
@@ -46,4 +47,4 @@ VALUES
   (1, 2, 2),
   (3, 3, 4);
 
-END;
+COMMIT;
