@@ -4,11 +4,12 @@ const path = require("path");
 
 const sql = fs.readFileSync(path.join(__dirname, "seeder.sql"), 'utf-8').toString();
 
-connection.query(sql, (err, res) => {
-
-  if (err) throw err;
-  console.log("Table created with result: ", res);
-  connection.end();
-});
+connection.query(sql)
+  .then(() => console.log("seed success"))
+  .catch(e => {
+    console.error("seed failed");
+    console.error(e);
+  }
+  );
 
 
