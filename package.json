@@ -5,13 +5,17 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js",
-    "start": "cross-env NODE_ENV=production node server/index.js"
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "build": "node server/config/build.js",
+    "seed": "node server/config/seed.js"
   },
   "dependencies": {
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "pg": "^8.11.0",
+    "jsonwebtoken": "^9.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
