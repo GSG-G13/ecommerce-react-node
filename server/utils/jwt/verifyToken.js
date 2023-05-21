@@ -1,16 +1,21 @@
 const { verify } = require("jsonwebtoken");
-require("dotenv").config();
-
 const { SECRET_KEY } = process.env;
 
-const verifyToken = (token) =>
-  new Promise((resolve, reject) => {
+
+const verifyToken = (req, res, next) => {
+  const { token } = req.cookies;
+
+  if (!token) {
+    res.status(400).json('unauthenticated')
+  } else {
     verify(token, SECRET_KEY, (err, decoded) => {
-      if (err) {
-        reject(err);
+      if (err) { res.status(302).json({ message: 'Token not found' }) }
+      else {
+        req.token = decoded;
+        next();
       }
-      resolve(decoded);
-    });
-  });
+    })
+  }
+};
 
 module.exports = verifyToken;
