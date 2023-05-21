@@ -1,3 +1,4 @@
+const connection = require("../database/config/connection");
 
 const homeController = (req, res) => {
   res.json({

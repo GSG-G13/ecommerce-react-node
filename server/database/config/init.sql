@@ -1,4 +1,3 @@
-
 BEGIN;
 -- This file is used to create the database and tables
 
@@ -28,7 +27,6 @@ CREATE TABLE CART (
     FOREIGN KEY (user_id) REFERENCES USERS (id),
     FOREIGN KEY (product_id) REFERENCES PRODUCTS (id)
 );
-
 
 COMMIT;
 

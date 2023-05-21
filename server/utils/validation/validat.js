@@ -1,4 +1,4 @@
-const GenericError = require('../helpers/customError');
+//const GenericError = require('../customError');
 
 const validate = (schema, data) => schema.validateAsync(data);
 
