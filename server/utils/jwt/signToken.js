@@ -1,15 +1,16 @@
-const jwt = require("jsonwebtoken");
+const { sign } = require('jsonwebtoken');
+require('dotenv').config();
 
 const { SECRET_KEY } = process.env;
 
-const generateToken = (payload) => new Promise((res, rej) => {
-  jwt.sign(payload, SECRET_KEY, (error, decoded) => {
-    if (error) {
-      rej(error)
-    } else {
-      res(decoded)
-    }
-  })
-})
+const signToken = (payload, options) =>
+  new Promise((resolve, reject) => {
+    sign(payload, SECRET, options, (err, token) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(token);
+    });
+  });
 
-module.exports = generateToken;
+module.exports = signToken;
