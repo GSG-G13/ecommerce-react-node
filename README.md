@@ -2,7 +2,7 @@
 
 # Figma Design 
 
-![Alt text](https://cdn.discordapp.com/attachments/1085919252525092904/1109742492712181800/proj.png)
+![Alt text](https://cdn.discordapp.com/attachments/1109748497458155611/1109936835741880413/Untitled.png)
 
 # Installation
 
