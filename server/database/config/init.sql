@@ -1,4 +1,5 @@
 BEGIN;
+-- This file is used to create the database and tables
 
 DROP TABLE IF EXISTS  USERS CASCADE;
 DROP TABLE IF EXISTS  PRODUCTS CASCADE;
