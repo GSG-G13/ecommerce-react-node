@@ -2,13 +2,14 @@ const bcrypt = require('bcrypt');
 const e = require('express');
 const { signInQuery } = require("../../database/query");
 const generateToken = require('../../utils/jwt/verifyToken');
+const jwt = require('../../utils/jwt/signToken');
 const GenericError = require('../../utils/customError');
 const signInSchema = require("../../utils/validation/loginValidation");
 const validate = require("../../utils/validation/validat");
 
 const signIn = (req, res) => {
 
-    
+
   const { email, password } = req.body;
   let user;
   validate(signInSchema, { email, password })

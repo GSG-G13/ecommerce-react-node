@@ -18,5 +18,4 @@ const connection = new Pool({
 
 });
 
-connection.query('select * from users').then((data)=>console.log)
 module.exports = connection;

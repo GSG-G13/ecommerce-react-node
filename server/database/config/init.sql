@@ -1,7 +1,3 @@
--- POSTGRES SQL script
-
--- PATH = server/database/config/init.sql
-
 BEGIN;
 
 DROP TABLE IF EXISTS  USERS CASCADE;
@@ -30,4 +26,6 @@ CREATE TABLE CART (
     FOREIGN KEY (user_id) REFERENCES USERS (id),
     FOREIGN KEY (product_id) REFERENCES PRODUCTS (id)
 );
+
+COMMIT;
 
