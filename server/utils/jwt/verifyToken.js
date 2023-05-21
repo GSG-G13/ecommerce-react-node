@@ -1,11 +1,11 @@
 const { verify } = require("jsonwebtoken");
 require("dotenv").config();
 
-const { SECRE } = process.env;
+const { SECRET_KEY } = process.env;
 
 const verifyToken = (token) =>
   new Promise((resolve, reject) => {
-    verify(token, SECRE, (err, decoded) => {
+    verify(token, SECRET_KEY, (err, decoded) => {
       if (err) {
         reject(err);
       }
