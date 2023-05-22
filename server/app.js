@@ -1,5 +1,6 @@
 const express = require('express');
 const compression = require('compression');
+const cookieParser = require('cookie-parser');
 const router = require('./router');
 require('dotenv').config();
 
@@ -13,6 +14,7 @@ app.use([
   express.json(),
   express.urlencoded({ extended: false }),
   compression(),
+  cookieParser(),
 ]);
 
 app.use('/', router);

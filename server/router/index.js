@@ -1,16 +1,13 @@
-const { homeController,
-signIn,
-signUp,
-logout,
+const cartRouter = require("./cartRouter");
+const mainPageRouter = require("./mainPageRouter");
+const productsRouter = require("./productsRouter");
+const userRouter = require("./userRouter");
 
- } = require('../controller');
+const router = require("express").Router();
 
-const router = require('express').Router();
-
-router.get('/', homeController);
-router.post("/signup", signUp);
-router.post("/signin", signIn);
-//router.get("/logout", logout);
-
+router.use("/", mainPageRouter);
+// router.use("/", productsRouter);
+// router.use("/", cartRouter);
+router.use("/user", userRouter);
 
 module.exports = router;
