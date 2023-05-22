@@ -1,5 +1,5 @@
-const signToken = require("./signToken");
-const verifyToken = require("./verifyToken");
+const signToken = require('./signToken');
+const verifyToken = require('./verifyToken');
 
 module.exports = {
   signToken,

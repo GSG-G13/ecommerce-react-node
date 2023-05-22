@@ -14,9 +14,4 @@ const connection = new Pool({
   // }
 });
 
-connection
-  .query('select * from users')
-  .then((data) => console.log)
-  .catch((err) => console.log(err));
-
 module.exports = connection;
