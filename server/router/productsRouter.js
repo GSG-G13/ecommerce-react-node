@@ -1,13 +1,13 @@
-const { checkAuth } = require('../middlewares');
+// const { checkAuth } = require('../middlewares');
 
-const productsRouter = require('express').Router();
+// const productsRouter = require('express').Router();
 
-productsRouter.get('/products',);
+// productsRouter.get('/products',);
 
-productsRouter.post('/products', checkAuth, );
-
-
+// productsRouter.post('/products', checkAuth, );
 
 
 
-module.exports = productsRouter;
+
+
+// module.exports = productsRouter;

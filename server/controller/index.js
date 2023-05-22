@@ -1,11 +1,9 @@
 const homeController = require("./homeController");
-const logout = require("./register/logout");
-const signIn = require("./register/signin");
-const signUp = require("./register/signup");
+const { signup, logOut, signIn } = require("./register");
 
 module.exports = {
   homeController,
-  signUp ,
+  signup,
   signIn,
-  logout,
+  logOut,
 };

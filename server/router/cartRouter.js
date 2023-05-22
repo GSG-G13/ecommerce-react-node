@@ -1,8 +1,8 @@
-const cartRouter = require('express').Router();
+// const cartRouter = require('express').Router();
 
-cartRouter.get('/cart');
+// cartRouter.get('/cart');
 
-cartRouter.post('/cart');
+// cartRouter.post('/cart');
 
 
-module.exports = cartRouter;
+// module.exports = cartRouter;
