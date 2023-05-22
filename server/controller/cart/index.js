@@ -1,5 +1,5 @@
-const addToCart = require("./addToCart");
-const getCart = require("./getCart");
+const addToCart = require('./addToCart');
+const getCart = require('./getCart');
 
 module.exports = {
   addToCart,

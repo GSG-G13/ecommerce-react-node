@@ -1,7 +1,7 @@
 const logOut = (req, res) => {
-  res.clearCookie("token").json({
+  res.clearCookie('token').json({
     status: 200,
-    msg: "logged out",
+    msg: 'logged out',
   });
 };
 

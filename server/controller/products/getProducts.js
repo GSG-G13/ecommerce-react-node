@@ -1,4 +1,4 @@
-const { getProductsQuery } = require("../../database/query");
+const { getProductsQuery } = require('../../database/query');
 
 const getProducts = (req, res) => {
   getProductsQuery()
