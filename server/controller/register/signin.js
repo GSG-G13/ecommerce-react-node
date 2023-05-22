@@ -1,42 +1,38 @@
 const bcrypt = require('bcrypt');
-const e = require('express');
 const { signInQuery } = require('../../database/query');
 const GenericError = require('../../utils/customError');
 const signInSchema = require('../../utils/validation/loginValidation');
-const validate = require('../../utils/validation/validat');
 const signToken = require('../../utils/jwt/signToken');
 
-const signIn = (req, res) => {
+const signIn = (req, res, next) => {
   const { email, password } = req.body;
-  let user;
-  validate(signInSchema, { email, password })
+  signInSchema
+    .validateAsync({ email, password })
     .then(() => signInQuery(email))
     .then((details) => {
-      console.log(details);
-      user = details.rows[0];
+      req.user = details.rows[0];
 
-      if (!user) {
+      if (!details.rowCount) {
         throw new GenericError(400, 'Please check your password and email');
       }
-
-      return bcrypt.compare(password, user.hashed);
+      const { hashed } = req.user;
+      return bcrypt.compare(password, hashed);
     })
     .then((isPasswordMatched) => {
       if (!isPasswordMatched) {
         throw new GenericError(400, 'Please check your password and email');
       } else {
-        return signToken({ id: user.id } , { expiresIn: '1d' });
+        const { id } = req.user;
+        return signToken({ id: id }, { expiresIn: '1d' });
       }
     })
-    .then((jwt) => {
-      console.log(jwt);
+    .then((token) => {
       res
-        .cookie('token', jwt, { httpOnly: true })
+        .cookie('token', token, { httpOnly: true })
         .json({ message: 'Logged in successfully!', success: true });
     })
     .catch((err) => {
-      console.log(err);
-      res.json({ err: err });
+      next(err);
     });
 };
 
