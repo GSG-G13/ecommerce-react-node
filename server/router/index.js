@@ -8,7 +8,7 @@ logout,
 const router = require('express').Router();
 
 router.get('/', homeController);
-//router.post("/signup", signUp);
+router.post("/signup", signUp);
 router.post("/signin", signIn);
 //router.get("/logout", logout);
 

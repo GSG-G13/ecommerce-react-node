@@ -5,7 +5,7 @@ const { SECRET_KEY } = process.env;
 
 const signToken = (payload, options) =>
   new Promise((resolve, reject) => {
-    sign(payload, SECRET, options, (err, token) => {
+    sign(payload, SECRET_KEY, options, (err, token) => {
       if (err) {
         reject(err);
       }
