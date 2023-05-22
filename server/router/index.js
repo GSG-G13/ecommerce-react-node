@@ -6,8 +6,8 @@ const userRouter = require("./userRouter");
 const router = require("express").Router();
 
 router.use("/", mainPageRouter);
-// router.use("/", productsRouter);
-// router.use("/", cartRouter);
+router.use("/allproducts", productsRouter);
+router.use("/usercart", cartRouter);
 router.use("/user", userRouter);
 
 module.exports = router;

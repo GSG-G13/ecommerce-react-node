@@ -1,12 +1,12 @@
-const UserByEmail = require("./register/UserByEmail");
-const signInQuery = require("./register/siginQuery");
-const signUpQuery = require("./register/signupQuery");
-
-
+const { getCartQuery, addToCartQuery } = require("./cart");
+const { getProductsQuery } = require("./products");
+const { signInQuery, signUpQuery, UserByEmail } = require("./register");
 
 module.exports = {
-    UserByEmail,
-    signInQuery,
-    signUpQuery,
-
-}
+  UserByEmail,
+  signInQuery,
+  signUpQuery,
+  getProductsQuery,
+  getCartQuery,
+  addToCartQuery,
+};

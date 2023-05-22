@@ -1,13 +1,6 @@
-// const { checkAuth } = require('../middlewares');
+const productsRouter = require("express").Router();
+const { getProducts } = require("../controller");
 
-// const productsRouter = require('express').Router();
+productsRouter.get("/products", getProducts);
 
-// productsRouter.get('/products',);
-
-// productsRouter.post('/products', checkAuth, );
-
-
-
-
-
-// module.exports = productsRouter;
+module.exports = productsRouter;
