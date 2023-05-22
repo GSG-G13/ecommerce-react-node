@@ -1,11 +1,13 @@
-const connection = require("../../config/connection");
+const connection = require('../../config/connection');
 
-const getCartQuery = () => {
+const getCartQuery = (id) => {
   const sql = {
-    text: `SELECT name, category, img_url, price FROM 
-        products JOIN cart ON cart.product_id = products.id`,
+    text: `select products.name from cart join
+    products ON products.id = cart.product_id 
+    where cart.user_id = $1`,
+    values: [id],
   };
-  return connection.query(sql)
+  return connection.query(sql);
 };
 
 module.exports = getCartQuery;
