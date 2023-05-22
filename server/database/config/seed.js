@@ -1,6 +1,6 @@
-const connection = require('./connection');
 const fs = require('fs');
 const path = require('path');
+const connection = require('./connection');
 
 const sql = fs
   .readFileSync(path.join(__dirname, 'seeder.sql'), 'utf-8')

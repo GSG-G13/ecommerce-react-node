@@ -1,8 +1,8 @@
-const customError = require("./customError");
-const { verifyToken, signToken } = require("./jwt");
+const customError = require('./customError');
+const { verifyToken, signToken } = require('./jwt');
 
 module.exports = {
-    customError,
-    verifyToken,
-    signToken
-}
+  customError,
+  verifyToken,
+  signToken,
+};

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const connection = require('../../config/connection');
 
 const increaseQuantity = ({ product_id, user_id }) => {
@@ -8,3 +9,5 @@ const increaseQuantity = ({ product_id, user_id }) => {
 
   return connection.query(sql);
 };
+
+module.exports = increaseQuantity;

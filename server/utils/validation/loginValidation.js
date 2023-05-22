@@ -5,7 +5,7 @@ const loginInSchema = joi.object({
     .string()
     .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
     .required(),
-  password: joi.string().pattern(new RegExp('[a-zA-Z0-9]{6,30}$')).required(),
+  password: joi.string().pattern(/[a-zA-Z0-9]{6,30}$/).required(),
 });
 
 module.exports = loginInSchema;
