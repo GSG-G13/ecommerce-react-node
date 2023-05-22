@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  /* background-color: #808080; */
+  background-image: url("../img/bg.png");
+  background-size: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.home img {
+  width: 90px;
+  display: block;
+}
+
+.home a {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.home a span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 17px;
+}
+
+li {
+  display: inline-block;
+  color: #d2a593;
+  font-size: 17px;
+}
+
+ul a {
+  margin: 0 30px;
+}
+
+.home {
+  margin-right: 40px;
+}
+
+.left-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-btn {
+  margin-left: 40px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  border: 3px solid #d2a593;
+  background: transparent;
+  height: 40px;
+  width: 220px;
+}
+
+/* cart .cart-container */
+
+.cart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-item {
+  margin-top: 70px;
+}
+
+.cart-btn a img {
+  width: 40px;
+}
+
+.cart-info {
+  width: 40%;
+  height: 150px;
+  background-color: #d2a593;
+}
+
+.cart-container img {
+  width: 10%;
+  height: 150px;
+}
+
+.cart-container {
+  margin-bottom: 30px;
+}
+
+.remove button {
+  width: 70px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(227, 230, 229);
+  position: relative;
+  left: 72vh;
+  top: 3vh;
+}
+
+.remove button:hover {
+  background-color: rgb(196, 196, 196);
+}
+
+.item-cart-info {
+  padding: 0 20px;
+}
+
+.item-cart-info h1 {
+  padding-bottom: 5px;
+}
+
+.item-cart-info h3 {
+  color: white;
+}
+
+.item-cart-info span {
+  color: #686868;
+}
+
+.item-count {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: -2vh;
+  padding-right: 2vh;
+}
+
+.item-count h3 {
+  padding: 0 5px;
+}
+
+.inc button,
+.dec button {
+  width: 25px;
+  height: 25px;
+  font-size: 14px;
+  background-color: rgb(227, 230, 229);
+  border: none;
+  cursor: pointer;
+}
+
+.inc button:hover,
+.dec button:hover {
+  background-color: rgb(196, 196, 196);
+}
