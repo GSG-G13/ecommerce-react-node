@@ -1,7 +1,7 @@
 const joi = require('joi');
 
 const signupSchema = joi.object({
-  username: joi.string().min(3).max(30).required(),
+  name: joi.string().min(3).max(30).required(),
   email: joi
     .string()
     .min(8)
