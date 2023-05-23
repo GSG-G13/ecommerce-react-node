@@ -1,13 +1,15 @@
-import "./style.css";
+import homeImage from "../../img/home.png";
+import cartImage from "../../img/cart.png";
+import clothesImage from "../../img/clothes.jpg";
 
 const ProductsPage = () => {
   return (
     <div>
       <header>
         <nav>
-          <div class="home">
+          <div className="home">
             <a href="index.html">
-              <img src="./img/home.png" />
+              <img src={homeImage} alt="Home" />
               <span>Home</span>
             </a>
           </div>
@@ -31,35 +33,47 @@ const ProductsPage = () => {
             </a>
           </ul>
 
-          <div class="left-side">
-            <div class="search-form">
-              <input type="text" class="search-input" />
+          <div className="left-side">
+            <div className="search-form">
+              <input type="text" className="search-input" />
             </div>
-            <div class="cart-btn">
-              <a href="#">
-                <img src="./img/cart.png" />
+            <div className="cart-btn">
+              <a href="cart.html">
+                <img src={cartImage} alt="Cart" />
               </a>
             </div>
           </div>
         </nav>
       </header>
 
-      <div class="collection-container">
-        <h1 class="items-title">
-          Featured Products
-          ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
-        </h1>
+      <div className="collection-container">
+        <h1 className="items-title">
+          Featured Products ـــــــــــــــــــــ
+          </h1>
 
-        <div class="item">
-          <img src="./img//clothes.jpg" />
-          <div class="item-info">
+        <div className="item">
+          <img src={clothesImage} alt="Coat" />
+          <div className="item-info">
             <h3>Coat</h3>
-            <div class="item-detalis">
+            <div className="item-details">
               <span>$240</span>
-              <button class="add-cart">Add Cart</button>
+              <button className="add-cart">Add Cart</button>
             </div>
           </div>
         </div>
+
+        <div className="item">
+          <img src={clothesImage} alt="Coat" />
+          <div className="item-info">
+            <h3>Coat</h3>
+            <div className="item-details">
+              <span>$240</span>
+              <button className="add-cart">Add Cart</button>
+            </div>
+          </div>
+        </div>
+   
+
       </div>
 
       <div class="page-num">

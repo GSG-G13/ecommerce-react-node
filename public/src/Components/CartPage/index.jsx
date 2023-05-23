@@ -1,19 +1,24 @@
-import "./style.css";
+import React from "react";
+import homeImage from "../../img/home.png";
+import cartImage from "../../img//cart.png";
+import clothesImage from "../../img/clothes.jpg";
+
+import "../main.css"
 
 const CartPage = () => {
   return (
     <div>
       <header>
         <nav>
-          <div class="home">
+          <div className="home">
             <a href="index.html">
-              <img src="./img/home.png" />
+              <img src={homeImage} alt="Home" />
               <span>Home</span>
             </a>
           </div>
 
-          <ul>
-            <li>|</li>
+          <ul className="red">
+            <li className="red">|</li>
             <a href="#">
               <li>About</li>
             </a>
@@ -31,40 +36,40 @@ const CartPage = () => {
             </a>
           </ul>
 
-          <div class="left-side">
-            <div class="search-form">
-              <input type="text" class="search-input" />
+          <div className="left-side">
+            <div className="search-form">
+              <input type="text" className="search-input" />
             </div>
-            <div class="cart-btn">
-              <a href="#">
-                <img src="./img/cart.png" />
+            <div className="cart-btn">
+              <a href="cart.html">
+                <img src={cartImage} alt="Cart" />
               </a>
             </div>
           </div>
         </nav>
       </header>
 
-      <div class="cart-item">
-        <div class="cart-container">
-          <img src="./img/clothes.jpg" alt="" />
-          <div class="cart-info">
-            <div class="remove">
+      <div className="cart-item">
+        <div className="cart-container">
+          <img src={clothesImage} alt="Clothes" />
+          <div className="cart-info">
+            <div className="remove">
               <button>Remove</button>
             </div>
 
-            <div class="item-cart-info">
+            <div className="item-cart-info">
               <h3>Coat</h3>
               <h1>Orange Coat</h1>
               <hr />
               <span>$350</span>
             </div>
 
-            <div class="item-count">
-              <div class="dec">
+            <div className="item-count">
+              <div className="dec">
                 <button>-</button>
               </div>
               <h3>0</h3>
-              <div class="inc">
+              <div className="inc">
                 <button>+</button>
               </div>
             </div>
@@ -74,6 +79,5 @@ const CartPage = () => {
     </div>
   );
 };
-
 
 export default CartPage;
