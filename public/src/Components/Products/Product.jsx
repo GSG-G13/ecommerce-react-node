@@ -1,7 +1,55 @@
 import './product.css'
 
+
 const Product = () => {
   return <div>
+
+<div className="main-header">
+<div className="container">
+    <ul className="links">
+            <li>
+              <a href="">Home</a>
+            </li>
+            <li>
+              <a href="">Faqs</a>
+            </li>
+            <li>
+              <a href="">Products</a>
+            </li>
+            <li>
+              <a href="">contact us</a>
+            </li>
+            <li>
+              <a href="">buy theme</a>
+            </li>
+          </ul>
+          <div>
+            <ul className="login">
+              <li>
+                <i className="fa-solid fa-right-to-bracket"></i>
+                <a href="">login/register</a>
+              </li>
+              <li>
+                <i className="fa-regular fa-heart"></i>
+                <a href="">wishlist</a>
+              </li>
+              <div className="icons">
+                <a href="">
+                  <i className="fa-brands fa-twitter"></i>
+                </a>
+                <a href="">
+                  <i className="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="">
+                  <i className="fa-brands fa-pinterest"></i>
+                </a>
+              </div>
+            </ul>
+            </div>
+    </div>
+</div>
+ 
+
      <div class="products">
         <div class="container">
             <div class="title">
@@ -564,7 +612,7 @@ const Product = () => {
 
     <div class="copy-right">
         <div class="container">
-            <p>© 2022 - Woodstock Woocommerce Theme. Designed by Hisham</p>
+            <p>© 2022 - Woodstock Woocommerce Theme. Designed by Mohammed Mahani</p>
             <img src="images/payment_cards.png" alt=""/>
         </div>
     </div>

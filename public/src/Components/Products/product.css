@@ -1,3 +1,6 @@
+.products{
+  margin-top: 50px;
+}
 .products .title {
   display: flex;
   align-items: center;
@@ -425,7 +428,7 @@
   background-image: url(https://hishamabualhaj.github.io/Ecommerce-Store/images/news-01.jpg);
 }
 .news .news-container .news-card .img2 {
-  background-image: url(https://hishamabualhaj.github.io/Ecommerce-Store/images/news-02.jpg);
+  background-image: url(https://cdn.discordapp.com/attachments/745366263555031101/1110680589595590716/122.png);
 }
 .news .news-container .news-card .img3 {
   background-image: url(https://hishamabualhaj.github.io/Ecommerce-Store/images/news-03.jpg);

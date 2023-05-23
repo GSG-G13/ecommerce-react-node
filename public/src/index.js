@@ -5,6 +5,7 @@ import SignUpForm from './Components/SignUpForm';
 import LoginForm from './Components/LoginForm';
 import Main from './Components/Landing/main';
 import Product from './Components/Products/Product';
+import Cart from './Components/Cart/Cart';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: '/product',
     element: <Product />,
+  },
+  {
+    path: '/cart',
+    element: <Cart />,
   },
 
   {

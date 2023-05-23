@@ -12,7 +12,7 @@ const Main = () => {
               <a href="">Faqs</a>
             </li>
             <li>
-              <a href="">blog</a>
+              <a href="">Products</a>
             </li>
             <li>
               <a href="">contact us</a>
@@ -50,7 +50,7 @@ const Main = () => {
       <div className="search-header">
         <div className="container">
           <div className="logo">
-            <img src="images/logo.png" alt="" />
+            <img src="images/mahani1.png" alt="" />
           </div>
           <div className="info">
             <div className="input">
@@ -61,25 +61,21 @@ const Main = () => {
               <i className="fa-solid fa-headphones"></i>
               <div className="text">
                 <p>customer support</p>
-                <div className="number">1-800-123-45-67</div>
+                <div className="number">+972-594131-656</div>
               </div>
               <i className="fa-solid fa-chevron-down down"></i>
               <div className="sub-div">
                 <div className="first">
-                  <div className="city">New York</div>
-                  <div className="number">1-800-333-42-63</div>
-                  <div className="light-text">
-                    78 2ND HOUSE RD MONTAUK, NY, 11954
-                  </div>
-                  <div className="email">ny@woodstock.com</div>
+                  <div className="city">Palestine</div>
+                  <div className="number">+972-594131-656</div>
+                  <div className="light-text">Gaza - Remal - 78 2ND</div>
+                  <div className="email">mohammed.mahanu@gmail.com</div>
                 </div>
                 <div className="second">
-                  <div className="city">San Francisco</div>
-                  <div className="number">1-800-444-23-54</div>
-                  <div className="light-text">
-                    1 INFINITE LOOP CUPERTINO, CA 95014
-                  </div>
-                  <div className="email">sf@woodstock.com</div>
+                  <div className="city">Palestine</div>
+                  <div className="number">+972-595653-552</div>
+                  <div className="light-text">Gaza - Remal - CA 95014</div>
+                  <div className="email">ahmed.izz.murtaja@gmail.com</div>
                   <div className="social">
                     <i className="fa-brands fa-facebook-f facebook"></i>
                     <i className="fa-brands fa-twitter twitter"></i>
@@ -128,12 +124,14 @@ const Main = () => {
                   <div className="title">shop styles</div>
                   <li>
                     <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Shop- Left Sidebar
+                      <i className="fa-solid fa-angle-right"></i>Shop- Left
+                      Sidebar
                     </a>
                   </li>
                   <li>
                     <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Shop- Right Sidebar
+                      <i className="fa-solid fa-angle-right"></i>Shop- Right
+                      Sidebar
                     </a>
                   </li>
                   <li>
@@ -209,7 +207,8 @@ const Main = () => {
                   </li>
                   <li>
                     <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Computers & Tablets
+                      <i className="fa-solid fa-angle-right"></i>Computers &
+                      Tablets
                     </a>
                   </li>
                   <li>
@@ -295,7 +294,8 @@ const Main = () => {
                   </li>
                   <li>
                     <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Mise & Keyboards
+                      <i className="fa-solid fa-angle-right"></i>Mise &
+                      Keyboards
                     </a>
                   </li>
                 </div>
