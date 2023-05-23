@@ -1,4 +1,6 @@
 import "./style.css";
+import {Link} from "react-router-dom";
+
 
 const MainPage = () => {
   return (
@@ -43,11 +45,11 @@ const MainPage = () => {
 
           <div class="left-side">
             <div class="signUp">
-              <button>SignUp</button>
+              <Link to="/signup">SignUp</Link>
             </div>
 
             <div class="signIn">
-              <button>SignIn</button>
+              <Link to="/login">SignIn</Link>
             </div>
           </div>
         </nav>
