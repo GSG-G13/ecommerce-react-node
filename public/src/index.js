@@ -1,24 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import SignUpForm from './Components/SignUpForm';
-import MainPage from './Components/MainPage';
 import LoginForm from './Components/LoginForm';
+import Main from './Components/Landing/main';
+import Product from './Components/Products/Product';
+
 const router = createBrowserRouter([
   {
-    path:'/',
-    element: <MainPage />
-  }, 
-  {
-    path:"/login",
-    element:<LoginForm />
+    path: '/',
+    element: <Main />,
   },
   {
-    path:'/signup',
-    element: <SignUpForm />
+    path: '/product',
+    element: <Product />,
+  },
 
-  }
-])
+  {
+    path: '/login',
+    element: <LoginForm />,
+  },
+  {
+    path: '/signup',
+    element: <SignUpForm />,
+  },
+]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
