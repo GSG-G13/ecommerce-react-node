@@ -1,5 +1,5 @@
 import "./style.css";
-import {Link} from "react-router-dom";
+import {Link , Outlet} from "react-router-dom";
 
 
 const MainPage = () => {
@@ -92,6 +92,7 @@ const MainPage = () => {
           </div>
         </div>
       </div>
+      <Outlet/>
     </div>
   );
 };
