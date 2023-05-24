@@ -14,8 +14,14 @@ import {
   faCartShopping,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Main = () => {
+
+  const handleLogOut = () =>{
+    fetch('/api/v1/user/logout').then((data)=> data.json())
+    .then((data) => console.log(data))
+  }
   return (
     <div>
       <div className="main-header">
@@ -35,6 +41,9 @@ const Main = () => {
             </li>
             <li>
               <a href="">buy theme</a>
+            </li>
+            <li>
+              <button onClick={handleLogOut}>log out</button>
             </li>
           </ul>
           <div>
