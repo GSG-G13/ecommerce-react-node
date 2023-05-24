@@ -1,4 +1,20 @@
-import './main.css';
+import "./main.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { faPinterest } from "@fortawesome/free-brands-svg-icons";
+import { faGooglePlusG } from "@fortawesome/free-brands-svg-icons";
+import {
+  faRightToBracket,
+  faMagnifyingGlass,
+  faHeadphones,
+  faWifi,
+  faCartShopping,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
+
 const Main = () => {
   return (
     <div>
@@ -24,22 +40,48 @@ const Main = () => {
           <div>
             <ul className="login">
               <li>
-                <i className="fa-solid fa-right-to-bracket"></i>
-                <a href="">login/register</a>
+                <FontAwesomeIcon
+                  icon={faRightToBracket}
+                  className="fa-right-to-bracket"
+                  id="ic"
+                />
+                <a href="">register</a>
+              </li>
+
+              <li>
+                <FontAwesomeIcon
+                  icon={faRightToBracket}
+                  className="fa-right-to-bracket"
+                  id="ic"
+                />
+                <a href="">login</a>
               </li>
               <li>
-                <i className="fa-regular fa-heart"></i>
+                <FontAwesomeIcon icon={faHeart} className="fa-heart" id="ic" />
+
                 <a href="">wishlist</a>
               </li>
               <div className="icons">
                 <a href="">
-                  <i className="fa-brands fa-twitter"></i>
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    className="fa-twitter"
+                    id="ic"
+                  />
                 </a>
                 <a href="">
-                  <i className="fa-brands fa-facebook-f"></i>
+                  <FontAwesomeIcon
+                    icon={faFacebookF}
+                    className="fa-facebook-f"
+                    id="ic"
+                  />
                 </a>
                 <a href="">
-                  <i className="fa-brands fa-pinterest"></i>
+                  <FontAwesomeIcon
+                    icon={faPinterest}
+                    className="fa-pinterest"
+                    id="ic"
+                  />
                 </a>
               </div>
             </ul>
@@ -52,18 +94,36 @@ const Main = () => {
           <div className="logo">
             <img src="images/mahani1.png" alt="" />
           </div>
-          <div className="info">
-            <div className="input">
-              <input type="text" placeholder="Search for products" />
-              <i className="fa-solid fa-magnifying-glass"></i>
+
+          <div className="location">
+            <FontAwesomeIcon
+              icon={faMapMarkerAlt}
+              className="fas fa-map-marker-alt"
+            id="ic"
+            />
+            <div className="location-details">
+              <h3>Deliver to</h3>
+              <h1>Palestinian Territories</h1>
             </div>
+          </div>
+
+          <div className="info">
             <div className="customer-support">
-              <i className="fa-solid fa-headphones"></i>
+              <FontAwesomeIcon
+                icon={faHeadphones}
+                className="fa-headphones"
+                id="ic"
+              />
               <div className="text">
                 <p>customer support</p>
                 <div className="number">+972-594131-656</div>
               </div>
-              <i className="fa-solid fa-chevron-down down"></i>
+
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className="fa-chevron-down down"
+                id="ic"
+              />
               <div className="sub-div">
                 <div className="first">
                   <div className="city">Palestine</div>
@@ -77,292 +137,45 @@ const Main = () => {
                   <div className="light-text">Gaza - Remal - CA 95014</div>
                   <div className="email">ahmed.izz.murtaja@gmail.com</div>
                   <div className="social">
-                    <i className="fa-brands fa-facebook-f facebook"></i>
-                    <i className="fa-brands fa-twitter twitter"></i>
-                    <i className="fa-brands fa-google-plus-g google"></i>
-                    <i className="fa-solid fa-wifi wifi"></i>
+                    <FontAwesomeIcon
+                      icon={faFacebookF}
+                      className="fa-facebook-f facebook"
+                      id="ic"
+                    />
+                    <FontAwesomeIcon
+                      icon={faTwitter}
+                      className="fa-twitter twitter"
+                      id="ic"
+                    />
+                    <FontAwesomeIcon
+                      icon={faGooglePlusG}
+                      className="fa-google-plus-g google"
+                      id="ic"
+                    />
+                    <FontAwesomeIcon
+                      icon={faWifi}
+                      className="fa-wifi wifi"
+                      id="ic"
+                    />
                   </div>
                 </div>
               </div>
             </div>
             <div className="cart">
-              <i className="fa-solid fa-cart-shopping"></i>
+              <a href="">
+                <FontAwesomeIcon
+                  icon={faCartShopping}
+                  className="fa-cart-shopping"
+                  id="ic"
+                />
+              </a>
+
               <div className="text">
                 <div>0 ITEMS</div>
                 <span>$0.00</span>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="nav-links">
-        <div className="container">
-          <div className="menu">
-            <i className="fa-solid fa-bars"></i> Menu
-          </div>
-          <ul className="main-nav">
-            <li className="home rel nav">
-              <a href="">
-                Home<i className="fa-solid fa-chevron-down down"></i>
-              </a>
-              <ul className="sub-nav">
-                <li>
-                  <a href="">Homepage v2</a>
-                </li>
-                <li>
-                  <a href="">Dark Watch Version</a>
-                </li>
-              </ul>
-            </li>
-            <li className="shop rel nav">
-              <a href="">
-                shop<i className="fa-solid fa-chevron-down down"></i>
-              </a>
-              <ul className="sub-nav">
-                <div className="niche">
-                  <div className="title">shop styles</div>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Shop- Left
-                      Sidebar
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Shop- Right
-                      Sidebar
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Shop without
-                      Sidebar
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Shop- 3 Columns
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Shop- 4 Columns
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Shop- 5 Columns
-                    </a>
-                  </li>
-                </div>
-                <div className="niche b-l p-l">
-                  <div className="title">shop pages</div>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Cart
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Checkout
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>My account
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Order Tracking
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Wishlist
-                    </a>
-                  </li>
-                </div>
-                <div className="niche b-l p-l">
-                  <div className="title">product pages</div>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Single Product
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Product without
-                      Sidebar
-                    </a>
-                  </li>
-                </div>
-                <div className="niche b-l p-l">
-                  <div className="title">shop categories</div>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Cellphones
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Computers &
-                      Tablets
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Smartwatch
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Accessories
-                    </a>
-                  </li>
-                </div>
-              </ul>
-            </li>
-            <li className="categories rel nav">
-              <a href="">
-                categories<i className="fa-solid fa-chevron-down down"></i>
-              </a>
-              <ul className="sub-nav">
-                <div className="niche">
-                  <div className="title">Cellphones</div>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Smartphones
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Phablets
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Accessories
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Smartwatch
-                    </a>
-                  </li>
-                </div>
-                <div className="niche b-l p-l">
-                  <div className="title">Computers & tablets</div>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Desktops
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Laptops
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Peripherals
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Tablets
-                    </a>
-                  </li>
-                </div>
-                <div className="niche b-l p-l">
-                  <div className="title">Accessories</div>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Headphones
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Photo & Video
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Graphic Tablets
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Mise &
-                      Keyboards
-                    </a>
-                  </li>
-                </div>
-              </ul>
-            </li>
-            <li className="theme-features rel nav">
-              <a href="">
-                theme features<i className="fa-solid fa-chevron-down down"></i>
-              </a>
-              <ul className="sub-nav">
-                <div className="niche">
-                  <div className="title">pages</div>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Theme Features
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Left Sidebar
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Right Sidebar
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>FAQs
-                    </a>
-                  </li>
-                </div>
-                <div className="niche b-l p-l">
-                  <div className="title">shortcodes</div>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Blog shortcodes
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Product sliders
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fa-solid fa-angle-right"></i>Product lists
-                    </a>
-                  </li>
-                </div>
-              </ul>
-            </li>
-            <li className="blog rel nav">
-              <a href="">
-                blog<i className="fa-solid fa-chevron-down down"></i>
-              </a>
-              <ul className="sub-nav">
-                <li>
-                  <a href="">Blog- Right Sidebar</a>
-                </li>
-                <li>
-                  <a href="">Blog- without Sidebar</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
         </div>
       </div>
 
