@@ -35,7 +35,6 @@
 }
 /* here width for 80%*/
 .product-cart-info {
-  width: 151vh;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
