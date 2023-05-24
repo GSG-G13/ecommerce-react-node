@@ -32,7 +32,7 @@ const Products = () => {
             
             <div class="product">
             <div class="img">
-            <img src={`images/${product.image}`} alt="" />
+            <img src={product.image} alt="" />
             </div>
             <div class="description">
               <span>{product.category}</span>
