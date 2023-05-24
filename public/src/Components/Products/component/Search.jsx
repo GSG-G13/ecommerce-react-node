@@ -1,7 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const Search = () => {
+const SearchBar = ({ searchQuery, onSearch }) => {
+  const handleSearch = (event) => {
+    onSearch(event.target.value);
+  };
+
   return (
     <div className="search-header">
       <div className="container">
@@ -12,6 +16,8 @@ const Search = () => {
               icon={faMagnifyingGlass}
               className="fa-magnifying-glass"
               id="ic"
+              value={searchQuery}
+              onChange={handleSearch}
             />
           </div>
         </div>
@@ -20,4 +26,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchBar;
