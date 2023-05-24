@@ -5,7 +5,7 @@ const News = () => {
   return (
     <div class="news">
       <div class="container">
-        <h1>Woodstock News</h1>
+        <h1>Mahani News</h1>
         <div class="news-container">
           <div class="news-card">
             <FontAwesomeIcon
