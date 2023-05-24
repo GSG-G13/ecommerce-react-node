@@ -3,6 +3,7 @@ const logOut = (req, res) => {
     status: 200,
     msg: 'logged out',
   });
+  res.redirect('/');
 };
 
 module.exports = logOut;

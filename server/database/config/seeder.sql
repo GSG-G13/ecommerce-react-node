@@ -34,4 +34,12 @@ SELECT
 FROM
   generate_series(1, 30);
 
+
+  INSERT INTO products (name, description, price, image, category)
+  VALUES
+  ('Motorola Moto 360', 'The new Moto 360 combines edge-to-edge glass with an exceptionally thin, polished bezel, giving you the largest viewing area. Whether...', 299.99, 'images/product-01.jpg', 'Smartwatch'),
+  ('Product 2', 'Description for Product 2', 199.99, 'images/product-02.jpg', 'Category 2'),
+  ('Product 3', 'Description for Product 3', 99.99, 'images/product-03.jpg', 'Category 1');
+
+
 COMMIT;
