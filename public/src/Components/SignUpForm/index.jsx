@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import './style.css';
 import axios from 'axios';
+
 const SignUpForm = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
   const [errors, setErrors] = useState([]);
 
   const handleInputChange = (event) => {
@@ -26,7 +28,12 @@ const SignUpForm = () => {
 
     if (errors.email === false && errors.password === false) {
       axios
-        .post('/api/v1/user/signup', { name :"ahmed", email, password, confirmPassword })
+        .post('/api/v1/user/signup', {
+          name: 'ahmed',
+          email,
+          password,
+          confirmPassword,
+        })
         .then((res) => {
           console.log(res);
           if (res.data.status === 'success') {
@@ -69,6 +76,16 @@ const SignUpForm = () => {
     <div className="signUp-form">
       <h2>SignUp Form</h2>
       <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Username</label>
+          <input
+            type="text"
+            placeholder="username"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          {errors.name && <p className="error">{errors.name}</p>}
+        </div>
         <div className="form-group">
           <label>Email:</label>
           <input
