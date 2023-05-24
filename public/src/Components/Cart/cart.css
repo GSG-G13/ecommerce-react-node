@@ -135,3 +135,11 @@
 .total-line {
   margin: 20px 0;
 }
+
+.remove_button {
+  background: none;
+  outline: none;
+  border: none;
+  box-shadow:none ;
+  cursor: pointer;
+}
