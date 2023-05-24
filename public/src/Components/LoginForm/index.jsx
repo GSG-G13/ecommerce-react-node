@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
+import './style.css';
+
 
 import { Link } from 'react-router-dom';
 const LoginForm = () => {
@@ -58,8 +60,9 @@ const LoginForm = () => {
         <h2>Login Form</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="Email">Email</label>
+            <label className='lbl' htmlFor="Email">Email</label>
             <input
+            className='em-input'
               type="text"
               placeholder="Enter your Email ..."
               value={email}
@@ -71,6 +74,8 @@ const LoginForm = () => {
           <div className="form-group">
             <label htmlFor="Password">Password</label>
             <input
+            className='pass-input'
+
               type="Password"
               value={password}
               placeholder=" password"
@@ -81,7 +86,10 @@ const LoginForm = () => {
           </div>
           <button>Login</button>
         </form>
-        <Link to="/signup"> Sign Up</Link>
+        <div className='convert-signup'>
+        <Link to="/signup"> Create new user?</Link>
+
+        </div>
       </div>
     </div>
   );

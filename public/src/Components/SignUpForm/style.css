@@ -1,50 +1,47 @@
-/* .signUp-form {
-  border: 1px solid #ccc;
-  background-color: rgb(227,230,229);
-  width: 400px;
-  padding: 40px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.signUp-form {
+  width: 100%;
+  max-width: 400px;
   margin: 0 auto;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
 }
 
 .form-group {
   margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
 .error {
-  color: red;
+  color: #ff5252;
+  font-size: 14px;
   margin-top: 5px;
 }
 
-.submit-button {
+label {
   display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
   width: 100%;
-  padding: 12px;
-  background-color: #d2a593;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.submit-button {
+  background-color: #2980b9;
   color: white;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   cursor: pointer;
-  font-size: 16px;
-  text-align: center;
-} */
+}
+
+.submit-button:hover {
+  background-color: #2474a7;
+}
