@@ -1,8 +1,4 @@
 import { useState, useEffect } from 'react';
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 import './cart.css';
 import CartItem from './CartItem'
 
@@ -39,17 +35,8 @@ const data = [
 ]
 
 const Cart = () => {
-<<<<<<< HEAD
-
-  const [count, setCount] = useState([]);
 
 
-useEffect(()=>{
-  
-
-
-}, [])
-=======
  const [cardsItems, setCardsItems] = useState([]);
 
 
@@ -102,7 +89,7 @@ const handleSubtract = ({id}) => {
   }, 0)
   return totalItems
  }
->>>>>>> main
+
 
   return (
     <div>
