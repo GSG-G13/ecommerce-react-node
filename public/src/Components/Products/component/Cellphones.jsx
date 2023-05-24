@@ -59,7 +59,7 @@ const Cellphones = () => {
               <img src="images/product-18.jpg" alt="" class="flip-product" />
             </div>
             <div class="description">
-              <span>Cellphones</span>
+              <span>Cellphone</span>
               <h2>Apple iPhone 5c</h2>
             </div>
             <div class="price">
