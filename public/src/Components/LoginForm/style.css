@@ -1,24 +1,21 @@
 .login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.form-container {
-  background-color: #f5f5f5;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
   padding: 20px;
+  background-color: #f0f0f0;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
 }
 
-.login-form {
+
+.form-group {
   margin-bottom: 20px;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.error {
+  color: #ff5252;
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 .lbl {
@@ -27,33 +24,33 @@
   font-weight: bold;
 }
 
-.input-field {
+.em-input,
+.pass-input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 3px;
+  border: 1px solid #ccc;
+  outline: none;
 }
 
-.error {
-  color: red;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-.login-button {
-  width: 100%;
-  padding: 10px;
+button {
   background-color: #4caf50;
-  color: #fff;
+  color: white;
+  padding: 10px 20px;
   border: none;
   border-radius: 3px;
   cursor: pointer;
 }
 
-.signup-link {
-  display: block;
-  text-align: center;
-  color: #4caf50;
-  text-decoration: none;
-  margin-top: 10px;
+button:hover {
+  background-color: #45a049;
+}
+
+
+.form-group{
+  margin: 30px 0;
+}
+
+.convert-signup{
+  margin-top: 15px;
 }
