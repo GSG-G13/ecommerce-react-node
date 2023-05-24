@@ -20,6 +20,20 @@ const Products = () => {
     fetchData();
   }, []);
 
+  async function addToCart(product_id) {
+    try {
+      await axios({
+        method: 'post',
+        url: '/api/v1/cart/add',
+        data: {
+          product_id,
+        },
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <div className="products">
       <div className="container">
@@ -41,7 +55,11 @@ const Products = () => {
                 <span>${product.price}</span>
               </div>
               <div class="more">
-                <div class="add-to-cart">Add to cart</div>
+                <div class="add-to-cart">
+                  <button onClick={() => addToCart(product.id)}>
+                    add to cart
+                  </button>
+                </div>
                 <p>{product.description}</p>
                 <div class="options">
                   <span>

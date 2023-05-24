@@ -6,8 +6,8 @@ const {
   decreaseQuantityController,
 } = require('../controller/cart/quantity');
 
-cartRouter.get('/', checkAuth, getCart);
-cartRouter.post('/add', checkAuth, addToCart);
+cartRouter.get('/', getCart);
+cartRouter.post('/add', addToCart);
 cartRouter.post('/increase/:product_id', checkAuth, increaseQuantityController);
 cartRouter.post('/decrease/:product_id', checkAuth, decreaseQuantityController);
 

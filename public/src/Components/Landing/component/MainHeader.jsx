@@ -30,23 +30,27 @@ const MainHeader = () => {
         </ul>
         <div>
           <ul className="login">
-            <li>
-              <FontAwesomeIcon
-                icon={faRightToBracket}
-                className="fa-right-to-bracket"
-                id="ic"
-              />
-              <Link to="/signup">register</Link>
-            </li>
+            <Link to="/signup" className="link">
+              <li>
+                <FontAwesomeIcon
+                  icon={faRightToBracket}
+                  className="fa-right-to-bracket"
+                  id="ic"
+                />
+                register
+              </li>
+            </Link>
+            <Link to="/login" className="link">
+              <li>
+                <FontAwesomeIcon
+                  icon={faRightToBracket}
+                  className="fa-right-to-bracket"
+                  id="ic"
+                />
+                login
+              </li>
+            </Link>
 
-            <li>
-              <FontAwesomeIcon
-                icon={faRightToBracket}
-                className="fa-right-to-bracket"
-                id="ic"
-              />
-              <Link to="/login">login</Link>
-            </li>
             <li>
               <FontAwesomeIcon icon={faHeart} className="fa-heart" id="ic" />
 

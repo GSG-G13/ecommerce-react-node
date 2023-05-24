@@ -70,7 +70,7 @@ input:focus {
 .main-header .container ul li:hover {
   background-color: gray;
 }
-.main-header .container ul li a {
+.main-header .container ul  .link {
   color: white;
   text-transform: uppercase;
   font-weight: 400;
