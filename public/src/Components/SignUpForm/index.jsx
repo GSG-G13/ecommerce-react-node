@@ -29,7 +29,7 @@ const SignUpForm = () => {
     if (errors.email === false && errors.password === false) {
       axios
         .post('/api/v1/user/signup', {
-          name: 'ahmed',
+          name: name,
           email,
           password,
           confirmPassword,
