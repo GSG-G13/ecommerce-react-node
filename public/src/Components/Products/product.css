@@ -408,7 +408,7 @@
   position: relative;
   overflow: hidden;
 }
-.news .news-container .news-card i {
+.news .news-container .news-card #ic {
   position: relative;
   z-index: 2;
   color: rgba(238, 238, 238, 0.829);
