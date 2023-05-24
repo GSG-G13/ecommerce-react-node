@@ -1,23 +1,22 @@
-import { useState } from "react";
-
-import './style.css'
+import { useState } from 'react';
+import axios from 'axios';
 
 const SignUpForm = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const [errors, setErrors] = useState([]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === "email") {
+    if (name === 'email') {
       setEmail(value);
-    } else if (name === "password") {
+    } else if (name === 'password') {
       setPassword(value);
-    } else if (name === "confirmPassword") {
+    } else if (name === 'confirmPassword') {
       setConfirmPassword(value);
     }
   };
@@ -27,43 +26,57 @@ const SignUpForm = () => {
     const errors = validate();
     setErrors(errors);
 
-    if (Object.keys(errors).length === 0) {
-      alert("Done");
+    if (errors.email === false && errors.password === false) {
+      axios
+        .post('/api/v1/user/signup', {
+          name: name,
+          email,
+          password,
+          confirmPassword,
+        })
+        .then((res) => {
+          console.log(res);
+          if (res.data.status === 'success') {
+            alert('SignUp Success');
+          }
+        });
+    } else {
+      alert('Error');
     }
   };
-  
+
   const validate = () => {
     const error = {};
 
     if (!email) {
-      error.email = "Email is Required";
-    } else if (/^\S+@\S+\.\S+$/) {
-        error.email = "Write a Correct Email";
+      error.email = 'Email is Required';
+    } else if (!/\S+@\S+\.\S+/.test(email || ' ')) {
+      error.email = 'Write a Correct Email';
     } else {
-      error.email = " ";
+      error.email = false;
     }
 
     if (!password) {
-      error.password = "Password is Required";
+      error.password = 'Password is Required';
     } else if (password.length < 5) {
-      error.password = "Write a strong password";
+      error.password = 'Write a strong password';
     } else {
-      error.password = " ";
+      error.password = false;
     }
     if (!confirmPassword) {
-        errors.confirmPassword = "Confirm Password is required";
+      errors.confirmPassword = 'Confirm Password is required';
     } else if (password !== confirmPassword) {
       errors.confirmPassword = "Password doesn't not match";
     }
 
     return error;
-  }
+  };
 
   return (
     <div className="signUp-form">
       <h2>SignUp Form</h2>
       <form onSubmit={handleSubmit}>
-      <div className="form-group">
+        <div className="form-group">
           <label>Username</label>
           <input
             type="text"
@@ -98,7 +111,7 @@ const SignUpForm = () => {
         <div className="form-group">
           <label>Confirm Password:</label>
           <input
-           className="form-input"
+            className="form-input"
             type="password"
             name="confirmPassword"
             placeholder="confirm your Password .."
@@ -109,7 +122,9 @@ const SignUpForm = () => {
             <p className="error">{errors.confirmPassword}</p>
           )}
         </div>
-        <button type="submit"  className="submit-button">Submit</button>
+        <button type="submit" className="submit-button">
+          Submit
+        </button>
       </form>
     </div>
   );

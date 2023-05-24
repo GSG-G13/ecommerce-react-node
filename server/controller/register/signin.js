@@ -4,7 +4,7 @@ const GenericError = require('../../utils/customError');
 const signInSchema = require('../../utils/validation/loginValidation');
 const signToken = require('../../utils/jwt/signToken');
 
-const signIn = (req, res, next) => {
+const signIn = (req, res) => {
   const { email, password } = req.body;
   signInSchema
     .validateAsync({ email, password })
@@ -33,7 +33,7 @@ const signIn = (req, res, next) => {
         .json({ message: 'Logged in successfully!', success: true });
     })
     .catch((err) => {
-      next(err);
+      res.status(400).json({ message: err.msg, success: false });
     });
 };
 

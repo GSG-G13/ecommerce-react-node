@@ -1,18 +1,14 @@
-import "./product.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons";
-import { faPinterest } from "@fortawesome/free-brands-svg-icons";
-import { faCodeCompare } from "@fortawesome/free-solid-svg-icons";
-import { faNewspaper } from "@fortawesome/free-solid-svg-icons";
+import './product.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import { faPinterest } from '@fortawesome/free-brands-svg-icons';
+import { faCodeCompare } from '@fortawesome/free-solid-svg-icons';
+import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 import {
   faRightToBracket,
   faMagnifyingGlass,
-  faHeadphones,
-  faWifi,
-  faCartShopping,
-  faChevronDown,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
 const Product = () => {
   return (
@@ -38,7 +34,7 @@ const Product = () => {
           </ul>
           <div>
             <ul className="login">
-            <li>
+              <li>
                 <FontAwesomeIcon
                   icon={faRightToBracket}
                   className="fa-right-to-bracket"
@@ -48,7 +44,7 @@ const Product = () => {
               </li>
 
               <li>
-              <FontAwesomeIcon
+                <FontAwesomeIcon
                   icon={faRightToBracket}
                   className="fa-right-to-bracket"
                   id="ic"
@@ -91,7 +87,7 @@ const Product = () => {
       <div className="search-header">
         <div className="container">
           <div className="info">
-          <div className="input">
+            <div className="input">
               <input type="text" placeholder="Search for products" />
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
@@ -935,7 +931,7 @@ const Product = () => {
           </div>
         </div>
       </footer>
-      
+
       <div class="footer-nav">
         <div class="container">
           <ul>
@@ -960,9 +956,7 @@ const Product = () => {
 
       <div class="copy-right">
         <div class="container">
-          <p>
-            © 2023 - Mahani Ecommerce Theme. Designed by Mohammed Mahani
-          </p>
+          <p>© 2023 - Mahani Ecommerce Theme. Designed by Mohammed Mahani</p>
           <img src="images/payment_cards.png" alt="" />
         </div>
       </div>
