@@ -1,6 +1,17 @@
+import { useState, useEffect } from 'react';
 import './cart.css';
 
 const Cart = () => {
+
+  const [count, setCount] = useState([]);
+
+
+useEffect(()=>{
+  
+
+
+}, [])
+
   return (
     <div>
       <div class="cart-container">
