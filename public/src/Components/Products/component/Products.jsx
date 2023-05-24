@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { faPinterest } from "@fortawesome/free-brands-svg-icons";
 import { faCodeCompare } from "@fortawesome/free-solid-svg-icons";
+import { faNewspaper } from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+
 
   useEffect(() => {
     const fetchData = async () => {
