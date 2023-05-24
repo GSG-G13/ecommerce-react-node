@@ -1,17 +1,32 @@
-import { useState } from "react";
+import { useState } from 'react';
+import axios from 'axios';
 
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const errors = validate();
     setErrors(errors);
-    if (Object.keys(errors).length === 0) {
-      alert("Done");
+    console.log(errors);
+    if (!errors.email && !errors.password) {
+      axios
+        .post('/api/v1/user/signin', { email, password })
+        .then((res) => {
+          console.log(res);
+          if (res.data.status === 'success') {
+            alert('Login Success');
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          alert('Error');
+        });
+    } else {
+      alert('Error');
     }
   };
 
@@ -19,19 +34,20 @@ const LoginForm = () => {
     const error = {};
 
     if (!email) {
-      error.email = "Email is Required";
-    } else if (/^\S+@\S+\.\S+$/) {
-        error.email = "Write a Correct Email";
+      console.log('email is required', email);
+      error.email = 'Email is Required';
+    } else if (!/\S+@\S+\.\S+/.test(email || ' ')) {
+      error.email = 'Write a Correct Email';
     } else {
-      error.email = " ";
+      error.email = false;
     }
 
     if (!password) {
-      error.password = "Password is Required";
+      error.password = 'Password is Required';
     } else if (password.length < 5) {
-      error.password = "Write a strong password";
+      error.password = 'Write a strong password';
     } else {
-      error.password = " ";
+      error.password = false;
     }
     return error;
   };
@@ -49,8 +65,8 @@ const LoginForm = () => {
               value={email}
               required
               onChange={(e) => setEmail(e.target.value)}
-              />
-              {errors.email && <p className="error">{errors.email}</p>}
+            />
+            {errors.email && <p className="error">{errors.email}</p>}
           </div>
           <div className="form-group">
             <label htmlFor="Password">Password</label>
@@ -61,8 +77,7 @@ const LoginForm = () => {
               required
               onChange={(e) => setPassword(e.target.value)}
             />
-              {errors.password && <p className="error">{errors.password}</p>}
-
+            {errors.password && <p className="error">{errors.password}</p>}
           </div>
           <button>Login</button>
         </form>
