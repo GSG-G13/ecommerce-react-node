@@ -4,53 +4,70 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { faPinterest } from '@fortawesome/free-brands-svg-icons';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
-
-import { Link, NavLink } from 'react-router-dom';
-
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 const MainHeader = () => {
+  const handleLogOut = () => {
+    fetch('/api/v1/user/logout')
+      .then((data) => data.json())
+      .then((data) => console.log(data));
+  };
   return (
     <div className="main-header">
       <div className="container">
         <ul className="links">
           <li>
-            <NavLink to="/">Home</NavLink>
+            <FontAwesomeIcon icon={faHeart} className="fa-heart" id="ic" />
+
+            <a href="">wishlist</a>
           </li>
-          <li>
-            <a href="">Faqs</a>
-          </li>
-          <li>
-            <NavLink to="/product">Products</NavLink>
-          </li>
-          <li>
-            <a href="">contact us</a>
-          </li>
-          <li>
-            <a href="">buy theme</a>
-          </li>
+          <div className="icons">
+            <a href="">
+              <FontAwesomeIcon
+                icon={faTwitter}
+                className="fa-twitter"
+                id="ic"
+              />
+            </a>
+            <a href="">
+              <FontAwesomeIcon
+                icon={faFacebookF}
+                className="fa-facebook-f"
+                id="ic"
+              />
+            </a>
+            <a href="">
+              <FontAwesomeIcon
+                icon={faPinterest}
+                className="fa-pinterest"
+                id="ic"
+              />
+            </a>
+          </div>
         </ul>
         <div>
           <ul className="login">
-            <Link to="/signup" className="link">
-              <li>
-                <FontAwesomeIcon
-                  icon={faRightToBracket}
-                  className="fa-right-to-bracket"
-                  id="ic"
-                />
-                register
-              </li>
-            </Link>
-            <Link to="/login" className="link">
-              <li>
-                <FontAwesomeIcon
-                  icon={faRightToBracket}
-                  className="fa-right-to-bracket"
-                  id="ic"
-                />
-                login
-              </li>
-            </Link>
+            <li>
+              <FontAwesomeIcon
+                icon={faRightToBracket}
+                className="fa-right-to-bracket"
+                id="ic"
+              />
+              <a href="">register</a>
+            </li>
 
+            <li>
+              <FontAwesomeIcon
+                icon={faRightToBracket}
+                className="fa-right-to-bracket"
+                id="ic"
+              />
+              <a href="">login</a>
+            </li>
+            <li>
+              <button onClick={handleLogOut}>log out</button>
+            </li>
             <li>
               <FontAwesomeIcon icon={faHeart} className="fa-heart" id="ic" />
 
