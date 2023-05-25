@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faCodeCompare } from "@fortawesome/free-solid-svg-icons";
-import SearchBar from "./Search";
 
 
-const Products = () => {
-  const [products, setProducts] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
-
+const Products = ({filteredProducts, setProducts}) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,15 +19,6 @@ const Products = () => {
     fetchData();
   }, []);
 
-  const handleSearch = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const filteredProducts = products.filter((product) => {
-    const productName = product.name.toLowerCase();
-    return productName.includes(searchQuery.toLowerCase());
-  });
-
   return (
     <div className="products">
       <div className="container">
@@ -39,17 +26,9 @@ const Products = () => {
           <h1>Featured Products</h1>
           <div></div>
         </div>
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search for products"
-            value={searchQuery}
-            onChange={handleSearch}
-          />
-        </div>
+      
         <div className="products-container">
           {filteredProducts.map((product) => (
-            
             <div class="product">
             <div class="img">
             <img src={product.image} alt="" />

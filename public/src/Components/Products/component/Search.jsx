@@ -1,23 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const SearchBar = ({ searchQuery, onSearch }) => {
-  const handleSearch = (event) => {
-    onSearch(event.target.value);
-  };
-
+const Search = ({searchQuery,handleSearch }) => {
   return (
     <div className="search-header">
       <div className="container">
         <div className="info">
           <div className="input">
-            <input type="text" placeholder="Search for products" />
-            <FontAwesomeIcon
+          <input
+            type="text"
+            placeholder="Search for products"
+            value={searchQuery}
+            onChange={handleSearch}
+          />            <FontAwesomeIcon
               icon={faMagnifyingGlass}
               className="fa-magnifying-glass"
-              id="ic"
-              value={searchQuery}
-              onChange={handleSearch}
+              id="ic"s
             />
           </div>
         </div>
@@ -26,4 +24,4 @@ const SearchBar = ({ searchQuery, onSearch }) => {
   );
 };
 
-export default SearchBar;
+export default Search;
