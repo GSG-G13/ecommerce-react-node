@@ -4,74 +4,60 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { faPinterest } from '@fortawesome/free-brands-svg-icons';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { Link ,NavLink } from 'react-router-dom';
 const MainHeader = () => {
-  const handleLogOut = () => {
-    fetch('/api/v1/user/logout')
-      .then((data) => data.json())
-      .then((data) => console.log(data));
-  };
   return (
     <div className="main-header">
       <div className="container">
         <ul className="links">
+        <NavLink className={'link'} to="/">
           <li>
-            <FontAwesomeIcon icon={faHeart} className="fa-heart" id="ic" />
-
-            <a href="">wishlist</a>
+            Home
           </li>
-          <div className="icons">
-            <a href="">
-              <FontAwesomeIcon
-                icon={faTwitter}
-                className="fa-twitter"
-                id="ic"
-              />
-            </a>
-            <a href="">
-              <FontAwesomeIcon
-                icon={faFacebookF}
-                className="fa-facebook-f"
-                id="ic"
-              />
-            </a>
-            <a href="">
-              <FontAwesomeIcon
-                icon={faPinterest}
-                className="fa-pinterest"
-                id="ic"
-              />
-            </a>
-          </div>
+          </NavLink>
+          <li>
+            <a className={'link'} href="">Faqs</a>
+          </li>
+          <NavLink className={'link'} to="/product">
+          <li>
+            Products
+          </li>
+          </NavLink>
+          <li>
+            <a className={'link'} href="">contact us</a>
+          </li>
+          <li>
+            <a className={'link'} href="">buy theme</a>
+          </li>
         </ul>
         <div>
           <ul className="login">
+          <Link className={'link'} to="/signup">
             <li>
               <FontAwesomeIcon
                 icon={faRightToBracket}
                 className="fa-right-to-bracket"
                 id="ic"
               />
-              <a href="">register</a>
+              Register
             </li>
+            </Link>
 
+
+            <Link className={'link'} to="/login">
             <li>
               <FontAwesomeIcon
                 icon={faRightToBracket}
                 className="fa-right-to-bracket"
                 id="ic"
               />
-              <a href="">login</a>
+              Login
             </li>
-            <li>
-              <button onClick={handleLogOut}>log out</button>
-            </li>
+            </Link>
             <li>
               <FontAwesomeIcon icon={faHeart} className="fa-heart" id="ic" />
 
-              <a href="">wishlist</a>
+              <a className={'link'} href="">wishlist</a>
             </li>
             <div className="icons">
               <a href="">

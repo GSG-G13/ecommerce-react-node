@@ -66,15 +66,19 @@ input:focus {
   padding: 26px;
   transition: 0.3s;
   cursor: pointer;
-}
+} 
 .main-header .container ul li:hover {
   background-color: gray;
 }
-.main-header .container ul  .link {
+.main-header .container ul li .link{
   color: white;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 11px;
+}
+
+.link{
+  color: white;
 }
 .main-header .container .login {
   display: flex;
