@@ -6,6 +6,7 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faPinterest } from "@fortawesome/free-brands-svg-icons";
 import { faGooglePlusG } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 import {
   faRightToBracket,
   faMagnifyingGlass,
@@ -16,6 +17,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const MainHeader = () =>{
+  const handleLogOut = () =>{
+    fetch('/api/v1/user/logout').then((data)=> data.json())
+    .then((data) => console.log(data))
+  }
     return(
         <div className="main-header">
         <div className="container">
@@ -54,6 +59,10 @@ const MainHeader = () =>{
                   id="ic"
                 />
                 <a href="">login</a>
+              </li>
+              <li>
+                
+                <button onClick={handleLogOut}>log out</button>
               </li>
               <li>
                 <FontAwesomeIcon icon={faHeart} className="fa-heart" id="ic" />
