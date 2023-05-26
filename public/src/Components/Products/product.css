@@ -99,10 +99,10 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   background-color: white;
 }
-.product:hover .more .add-to-cart {
+.product:hover .more .add-to-cart button {
   transform: translateY(-20px);
 }
-.product .more .add-to-cart {
+.product .more .add-to-cart button {
   background-color: #6686b7;
   width: fit-content;
   color: white;
@@ -114,7 +114,7 @@
   transition: 0.3s;
   cursor: pointer;
 }
-.product .more .add-to-cart:hover {
+.product .more .add-to-cart button:hover {
   background-color: #5586d1;
 }
 .product .more p {

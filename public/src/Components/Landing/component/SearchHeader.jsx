@@ -1,14 +1,16 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
-import { faTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons";
-import { faGooglePlusG } from "@fortawesome/free-brands-svg-icons";
+import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
 import {
   faHeadphones,
   faWifi,
   faCartShopping,
   faChevronDown,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
+
+import { Link } from 'react-router-dom';
 
 const SearchHeader = () => {
   return (
@@ -85,13 +87,13 @@ const SearchHeader = () => {
             </div>
           </div>
           <div className="cart">
-            <a href="">
+            <Link to="/cart">
               <FontAwesomeIcon
                 icon={faCartShopping}
                 className="fa-cart-shopping"
                 id="ic"
               />
-            </a>
+            </Link>
 
             <div className="text">
               <div>0 ITEMS</div>

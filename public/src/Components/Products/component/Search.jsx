@@ -1,5 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
+
+import {
+  faCartShopping,
+} from '@fortawesome/free-solid-svg-icons';
+
+
 
 const Search = ({searchQuery,handleSearch }) => {
   return (
@@ -17,6 +24,16 @@ const Search = ({searchQuery,handleSearch }) => {
               className="fa-magnifying-glass"
               id="ic"s
             />
+          </div>
+          <div className="cart">
+            <Link to="/cart">
+              <FontAwesomeIcon
+                icon={faCartShopping}
+                className="fa-cart-shopping"
+                id="ic"
+              />
+            </Link>
+
           </div>
         </div>
       </div>

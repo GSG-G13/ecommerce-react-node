@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import './cart.css';
-import CartItem from './CartItem'
+import CartItem from './CartItem';
+import { Link ,NavLink } from 'react-router-dom';
+
 
 const data = [
   {
@@ -114,9 +116,9 @@ const handleSubtract = ({id}) => {
 
             </div>
           </div>
-          <a href="" className="continue-shop">
+          <NavLink to="/product" className="continue-shop">
             Continue Shopping
-          </a>
+          </NavLink>
         </div>
 
         <div className="right-side">

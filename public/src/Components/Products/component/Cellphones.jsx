@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faCodeCompare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faCodeCompare } from '@fortawesome/free-solid-svg-icons';
 
 const Cellphones = () => {
   return (
@@ -59,7 +59,7 @@ const Cellphones = () => {
               <img src="images/product-18.jpg" alt="" class="flip-product" />
             </div>
             <div class="description">
-              <span>Cellphones</span>
+              <span>Cellphone</span>
               <h2>Apple iPhone 5c</h2>
             </div>
             <div class="price">
@@ -70,45 +70,6 @@ const Cellphones = () => {
               <p>
                 The iPhone 5c replaces the iPhone 5 in the Apple stable,
                 inheriting its internals, like the A6 processor, 4" screen...
-              </p>
-              <div class="options">
-                <span>
-                  <FontAwesomeIcon
-                    icon={faHeart}
-                    className="fa-heart"
-                    id="ic"
-                  />
-                  add to wishlist
-                </span>
-                <span>
-                  <FontAwesomeIcon
-                    icon={faCodeCompare}
-                    className="fa-code-compare"
-                    id="ic"
-                  />
-                  compare
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img">
-              <img src="images/product-13.jpg" alt="" />
-              <img src="images/product-14.jpg" alt="" class="flip-product" />
-            </div>
-            <div class="description">
-              <span>Computers & tablets</span>
-              <h2>Apple iMac 27-inch</h2>
-            </div>
-            <div class="price">
-              <span>$2,100.00</span>
-            </div>
-            <div class="more">
-              <div class="add-to-cart">Add to cart</div>
-              <p>
-                The idea behind iMac has never wavered: to craft the ultimate
-                desktop experience. The best display, paired with
-                high-performance processors,...
               </p>
               <div class="options">
                 <span>
