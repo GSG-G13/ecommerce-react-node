@@ -1,5 +1,4 @@
 const cartRouter = require('express').Router();
-const { checkAuth } = require('../middlewares');
 const { getCart, addToCart } = require('../controller');
 const {
   increaseQuantityController,
@@ -8,7 +7,7 @@ const {
 
 cartRouter.get('/', getCart);
 cartRouter.post('/add', addToCart);
-cartRouter.post('/increase/:product_id', checkAuth, increaseQuantityController);
-cartRouter.post('/decrease/:product_id', checkAuth, decreaseQuantityController);
+cartRouter.post('/increase/:product_id', increaseQuantityController);
+cartRouter.post('/decrease/:product_id', decreaseQuantityController);
 
 module.exports = cartRouter;

@@ -5,9 +5,12 @@ const getProductQuantity = require('../../database/query/cart/getQuantity');
 
 const increaseQuantityController = (req, res) => {
   const { product_id } = req.params;
-  const { user_id } = req.user;
+  const { id } = req.user;
+  const user_id = id;
+  console.log('user_idddddd', user_id);
   increaseQuantity({ product_id, user_id })
     .then(({ rows }) => {
+      console.log(rows);
       res.status(200).json({
         status: 'success',
         data: rows,
@@ -41,10 +44,11 @@ const decreaseQuantityController = (req, res) => {
         data: rows,
       });
     })
-    .catch(() => {
+    .catch((err) => {
       res.status(500).json({
         status: 'error',
         message: 'Internal server error',
+        err,
       });
     });
 };
