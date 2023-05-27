@@ -43,7 +43,7 @@ const Cart = () => {
 
 
  useEffect(() => {
-  setCardsItems(data)
+  
  }, [])
 
 const removeItem = ({id}) => {
