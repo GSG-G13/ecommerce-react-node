@@ -1,7 +1,8 @@
 const { getCartQuery } = require('../../database/query');
 
 const getCart = (req, res) => {
-  getCartQuery()
+  const { id } = req.user;
+  getCartQuery(id)
     .then((data) => {
       res.status(200).json(data.rows);
     })
