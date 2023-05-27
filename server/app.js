@@ -3,6 +3,7 @@ const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const request = require('request');
 const router = require('./router');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -18,6 +19,7 @@ app.use([
   cookieParser(),
 ]);
 
+app.use(path.join(express.static(__dirname, '..', 'public', 'build')));
 app.use('/api/v1', router);
 
 app.get('/location', (req, res) => {
