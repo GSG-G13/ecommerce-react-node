@@ -1,40 +1,8 @@
 import { useState, useEffect } from 'react';
 import './cart.css';
 import CartItem from './CartItem';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-
-// const data = [
-//   {
-//   id: '1',
-//   image: './images/product-03.jpg',
-//   name: 'IPhone',
-//   category: 'Mobile',
-//   price: 350,
-//   totalPrice: 350,
-//   quantity: 1,
-//   },
-//   {
-//     id: '2',
-//     image: './images/product-03.jpg',
-//     name: 'IPhone1',
-//     category: 'Mobile1',
-//     price: 250,
-//     totalPrice: 250,
-//   quantity: 1,
-
-//     },
-//     {
-//       id: '3',
-//       image: './images/product-03.jpg',
-//       name: 'IPhone2',
-//       category: 'Mobile2',
-//       price: 220,
-//       totalPrice: 220,
-//   quantity: 1,
-
-//     },
-// ]
 
 const Cart = () => {
   const [cardsItems, setCardsItems] = useState([]);
@@ -53,8 +21,15 @@ const Cart = () => {
   }, []);
 
   const removeItem = ({ id }) => {
-    const result = cardsItems.filter((item) => item.id !== id);
-    setCardsItems(result);
+    axios.post(`/api/v1/cart/delete/${id}`).then((res) => {
+      console.log(res);
+      if (res.status === 200) {
+        const result = cardsItems.filter((item) => item.id !== id);
+        setCardsItems(result);
+      } else {
+        console.log('error');
+      }
+    });
   };
 
   const handleAdd = ({ id }) => {
@@ -79,6 +54,10 @@ const Cart = () => {
     });
   };
   const handleSubtract = ({ id }) => {
+    const selectedItem = cardsItems.find((item) => item.id === id);
+    if (selectedItem.quantity === 1) {
+      return removeItem({ id });
+    }
     axios.post(`/api/v1/cart/decrease/${id}`).then((res) => {
       console.log(res);
       if (res.status === 200) {
