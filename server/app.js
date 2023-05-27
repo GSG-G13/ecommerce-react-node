@@ -19,9 +19,8 @@ app.use([
   cookieParser(),
 ]);
 
-app.use(path.join(express.static(__dirname, '..', 'public', 'build')));
+app.use(express.static(path.join(__dirname, '..', 'public', 'build')));
 app.use('/api/v1', router);
-
 app.get('/location', (req, res) => {
   const ipAddress = req.ip;
   console.log(ipAddress);
