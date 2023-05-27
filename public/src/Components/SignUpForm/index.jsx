@@ -39,8 +39,9 @@ const SignUpForm = () => {
         })
         .then((res) => {
           console.log(res);
-          if (res.data.status === 'success') {
-            alert('SignUp Success');
+          if (res.status === 200) {
+            alert(res.data.message);
+            window.location.href = '/';
           }
         });
     } else {

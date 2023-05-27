@@ -7,6 +7,7 @@ import Sections from "./component/Sections";
 const Main = () => {
   return (
     <div>
+        
       <MainHeader />
 
       <SearchHeader />

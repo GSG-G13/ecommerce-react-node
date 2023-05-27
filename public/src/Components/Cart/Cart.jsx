@@ -1,97 +1,122 @@
 import { useState, useEffect } from 'react';
 import './cart.css';
 import CartItem from './CartItem';
-import { Link ,NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import axios from 'axios';
 
+// const data = [
+//   {
+//   id: '1',
+//   image: './images/product-03.jpg',
+//   name: 'IPhone',
+//   category: 'Mobile',
+//   price: 350,
+//   totalPrice: 350,
+//   quantity: 1,
+//   },
+//   {
+//     id: '2',
+//     image: './images/product-03.jpg',
+//     name: 'IPhone1',
+//     category: 'Mobile1',
+//     price: 250,
+//     totalPrice: 250,
+//   quantity: 1,
 
-const data = [
-  {
-  id: '1',
-  image: './images/product-03.jpg',
-  name: 'IPhone',
-  category: 'Mobile',
-  price: 350,
-  totalPrice: 350,
-  quantity: 1,
-  },
-  {
-    id: '2',
-    image: './images/product-03.jpg',
-    name: 'IPhone1',
-    category: 'Mobile1',
-    price: 250,
-    totalPrice: 250,
-  quantity: 1,
+//     },
+//     {
+//       id: '3',
+//       image: './images/product-03.jpg',
+//       name: 'IPhone2',
+//       category: 'Mobile2',
+//       price: 220,
+//       totalPrice: 220,
+//   quantity: 1,
 
-    },
-    {
-      id: '3',
-      image: './images/product-03.jpg',
-      name: 'IPhone2',
-      category: 'Mobile2',
-      price: 220,
-      totalPrice: 220,
-  quantity: 1,
-
-    },
-]
+//     },
+// ]
 
 const Cart = () => {
+  const [cardsItems, setCardsItems] = useState([]);
 
+  useEffect(() => {
+    axios
+      .get('/api/v1/cart')
+      .then((res) => {
+        if (res.status === 200) {
+          setCardsItems(res.data);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
- const [cardsItems, setCardsItems] = useState([]);
+  const removeItem = ({ id }) => {
+    const result = cardsItems.filter((item) => item.id !== id);
+    setCardsItems(result);
+  };
 
+  const handleAdd = ({ id }) => {
+    axios.post(`/api/v1/cart/increase/${id}`).then((res) => {
+      console.log(res);
+      if (res.status === 200) {
+        const result = cardsItems.map((item) => {
+          if (item.id === id) {
+            return {
+              ...item,
+              quantity: item.quantity + 1,
+              price: +item.price + item.price,
+            };
+          } else {
+            return item;
+          }
+        });
+        setCardsItems(result);
+      } else {
+        console.log('error');
+      }
+    });
+  };
+  const handleSubtract = ({ id }) => {
+    axios.post(`/api/v1/cart/decrease/${id}`).then((res) => {
+      console.log(res);
+      if (res.status === 200) {
+        const selectedItem = cardsItems.find((item) => item.id === id);
+        if (selectedItem.quantity === 1) {
+          return removeItem({ id });
+        }
+        const result = cardsItems.map((item) => {
+          if (item.id === id) {
+            return {
+              ...item,
+              quantity: item.quantity - 1,
+              totalPrice: +item.price * +item.quantity - +item.price,
+            };
+          } else {
+            return item;
+          }
+        });
+        setCardsItems(result);
+      } else {
+        console.log('error');
+      }
+    });
+  };
 
- useEffect(() => {
-  setCardsItems(data)
- }, [])
+  const handleItemsNumber = () => {
+    const totalItems = cardsItems.reduce((sum, currentValue) => {
+      return sum + currentValue.quantity;
+    }, 0);
+    return totalItems;
+  };
 
-const removeItem = ({id}) => {
-  const result = cardsItems.filter(item => item.id !== id);
-  setCardsItems(result)
-}
-
-const handleAdd = ({id}) => {
-  const result = cardsItems.map(item => {
-    if(item.id === id) {
-      return {...item, quantity: item.quantity + 1, totalPrice: item.totalPrice+item.price}
-    }else {
-      return item
-    }
-  });
-  setCardsItems(result)
-}
-const handleSubtract = ({id}) => {
-  const selectedItem = cardsItems.find(item => item.id === id);
-  if(selectedItem.quantity === 1) {
-    return removeItem({id})
-  }
-  const result = cardsItems.map(item => {
-    if(item.id === id) {
-      return {...item, quantity: item.quantity - 1,  totalPrice: item.totalPrice-item.price}
-    }else {
-      return item
-    }
-  });
-  setCardsItems(result)
-}
-
-
-
- const handleItemsNumber = () => {
-  const totalItems = cardsItems.reduce((sum, currentValue) => {
-    return sum + currentValue.quantity
-  }, 0)
-  return totalItems
- }
-
- const handleTotalPrice = () => {
-  const totalItems = cardsItems.reduce((sum, currentValue) => {
-    return sum + currentValue.totalPrice
-  }, 0)
-  return totalItems
- }
-
+  const handleTotalPrice = () => {
+    const totalItems = cardsItems.reduce((sum, currentValue) => {
+      return sum + currentValue.price * currentValue.quantity;
+    }, 0);
+    return totalItems;
+  };
 
   return (
     <div>
@@ -111,9 +136,16 @@ const handleSubtract = ({id}) => {
             </div>
 
             <div className="product-cart-info">
-              {cardsItems.map(item =>  <CartItem handleSubtract={handleSubtract} handleAdd={handleAdd} removeItem={removeItem} key={item.id}  {...item}/>)}
-
-
+              {cardsItems.map((item) => (
+                <CartItem
+                  handleSubtract={handleSubtract}
+                  handleAdd={handleAdd}
+                  removeItem={removeItem}
+                  key={item.id}
+                  {...item}
+                  totalPrice={+item.price * +item.quantity}
+                />
+              ))}
             </div>
           </div>
           <NavLink to="/product" className="continue-shop">

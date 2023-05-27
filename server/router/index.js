@@ -7,8 +7,7 @@ const userRouter = require('./userRouter');
 
 router.use('/', mainPageRouter);
 router.use('/products', productsRouter);
-router.use('/cart',checkAuth, cartRouter);
+router.use('/cart', checkAuth, cartRouter);
 router.use('/user', userRouter);
 
 module.exports = router;
-

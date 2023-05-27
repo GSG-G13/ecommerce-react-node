@@ -11,8 +11,21 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const SearchHeader = () => {
+  const [location, setLocation] = useState('Palestinian Territories');
+  useEffect(() => {
+    axios
+      .get('/location')
+      .then((res) => {
+        setLocation(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <div className="search-header">
       <div className="container">
@@ -28,7 +41,7 @@ const SearchHeader = () => {
           />
           <div className="location-details">
             <h3>Deliver to</h3>
-            <h1>Palestinian Territories</h1>
+            <h1>{location}</h1>
           </div>
         </div>
 
