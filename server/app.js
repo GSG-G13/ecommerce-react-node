@@ -1,9 +1,9 @@
 const express = require('express');
 const compression = require('compression');
 const cookieParser = require('cookie-parser');
-const request = require('request');
-const router = require('./router');
+// const request = require('request');
 const path = require('path');
+const router = require('./router');
 require('dotenv').config();
 
 const app = express();
@@ -26,16 +26,16 @@ app.get('/location', (req, res) => {
   console.log(ipAddress);
   const apiUrl = `http://ip-api.com/json/${ipAddress}`;
 
-  request(apiUrl, (error, response, body) => {
-    if (!error && response.statusCode === 200) {
-      const locationData = JSON.parse(body);
-      console.log(locationData);
-      const location = `${locationData.city}, ${locationData.regionName}, ${locationData.country}`;
-      res.send(location);
-    } else {
-      res.send('Unable to determine your location');
-    }
-  });
+  // request(apiUrl, (error, response, body) => {
+  //   if (!error && response.statusCode === 200) {
+  //     const locationData = JSON.parse(body);
+  //     console.log(locationData);
+  //     const location = `${locationData.city}, ${locationData.regionName}, ${locationData.country}`;
+  //     res.send(location);
+  //   } else {
+  //     res.send('Unable to determine your location');
+  //   }
+  // });
 });
 
 module.exports = app;
